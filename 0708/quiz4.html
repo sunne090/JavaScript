@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>휴대폰 앞 번호</h1>
+    <div id = "content">
+    <select>
+            <option class="opt" value="010">010</option>
+            <option class="opt" value="011">011</option>
+            <option class="opt" value="012">012</option>
+            <option class="opt" value="013">013</option>
+            <option class="opt" value="014">014</option>
+        </select>
+    </div>
+    <script>
+        document.getElementById("content").addEventListener("change", function(){
+            let a = document.getElementsByClassName("opt").value;
+            let c = document.getElementById("content");
+            let h = document.createElement('h1');
+            let con1 = document.createTextNode(`${a}`);
+            c.append(h);
+            h.append(con1);
+        });
+         // <p>컨텐츠1</p>
+    </script>
+</body>
+</html>

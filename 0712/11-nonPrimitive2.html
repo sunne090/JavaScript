@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let objA = {
+            a : 40
+        }
+
+        let objB = objA;
+
+        console.log(objA.a);//40
+        console.log(objB.a);//40
+
+        objB.a = 50;
+        console.log(objA.a);//50
+        console.log(objB.a);//50
+
+        let objC = {value:100};
+        let objD = {value:100};
+
+        console.log(objC == objD); //false 주소가 달라서 false로 나옴
+        console.log(objA == objB); //true 같은 주소 참조함
+    </script>
+</body>
+</html>

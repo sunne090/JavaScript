@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+   <script>
+       //\d : 모든 숫자를 대표하는 특수문자
+       console.log(/a\d/.exec("ad")); //a다음에 바로 숫자가 오냐 null
+       console.log(/a\d/.exec("a1d")); //exec(): a 다음에 바로 숫자가 오니 정보를 담아서 배열로 출력
+        // \* : * 특수문자 대표
+       console.log(/a\*/.exec("aaaaaa")); //null
+       console.log(/a\*/.exec("aaa*aa*a")); //true
+   </script> 
+</body>
+</html>

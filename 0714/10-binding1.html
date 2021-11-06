@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //정말정말 급하고 필요한 경우에만 사용 권장, 웬만하면 사용 X
+        const callback = function(){
+            console.dir(this);
+        }
+        const obj = {
+            a : 1
+        }
+        //const c = callback.bind(obj);
+        //c();
+        setTimeout(callback.bind(obj),1000);
+    </script>
+</body>
+</html>

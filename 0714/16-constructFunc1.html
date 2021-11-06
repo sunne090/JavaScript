@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const a = {
+        //     name : "홍길동",
+        //     age : 29,
+        //     address : "서울시 중구"
+        // }
+        // const n = {
+        //     name : "임꺽정",
+        //     age : 41,
+        //     address : "천안시"
+        // }
+        // const c = {
+        //     name : "스폰지밥",
+        //     age : 21,
+        //     address : "비키니시티"
+        // } //좋은 방식은 아님
+        const Person = function(name,age,address){
+            this.name = name;
+            this.age = age;
+            this.address = address;
+            // this.funcB = function(){
+            //     console.log("생성자 함수 안에서 선언된 함수");
+            // } //비효율적임
+        }
+        // 반복적인 데이터를 서버로 보내고자 할 때 사용하는 생성자 함수
+        // 생성자 함수는 자신과 똑 닮은 프로토타입 객체를 생성, 생성할 때 constructor로 프로토타입을 참조함
+
+        Person.prototype.funcB = function(){
+            console.log("함수의 프로토타입을 통해 선언된 함수");
+        }
+
+        const a = new Person("홍길동",25,"서울시 중구");
+        const b = new Person("임꺽정",41,"천안시");
+        const c = new Person("스폰지밥",21,"비키니시티");
+        // new를 통해서 생성하면 person prototype를 찾아감
+
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        console.log(a.name);//홍길동
+        console.log(a.age);//25
+
+        const d = {
+            name : "스폰지밥",
+            age : 21,
+            address : "비키니시티"
+        }
+        console.log(d);
+        a.__proto__.funcA = function(){
+            console.log("공통으로 사용 가능한 기능");
+        } //a에서 선언했지만 person prototype에 들어가있기 때문에 b,c도 실행 가능함, 효율적인 방법/ 객체가 무조건 하나 선언이 되어야 함 -> 생성자함수에 프로토타입에 함수 선언
+        a.funcA();
+        b.funcA();
+        c.funcA();
+
+
+        const e = Person("나는",23,"자연인이다");
+        // new 안쓰면 this는 윈도우 가리킴
+        // e.name 이런거 안됨
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr1 = [1,2,3,4,5];
+
+        console.log(arr1);//(5) [1, 2, 3, 4, 5]
+        console.log(...arr1); //1 2 3 4 5
+
+        const arr2 = [1,2,3];
+        const arr3 = [4,5,6];
+
+        const arr4 = [...arr3, ...arr2 ];
+        console.log(arr4); //(6) [4, 5, 6, 1, 2, 3]
+
+
+        const arr5 = [0,...arr2,3.5,...arr3];
+        console.log(arr5); //(8) [0, 1, 2, 3, 3.5, 4, 5, 6]
+
+        const arr6 = [..."music"];
+        console.log(arr6); //(5) ['m', 'u', 's', 'i', 'c']
+
+        const arr7 = [10,20,30];
+        get(...arr7); //60
+        function get(one, two, three){
+            console.log(one+two+three);
+        }
+    </script>
+</body>
+</html>

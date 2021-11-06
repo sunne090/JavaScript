@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let type = "Type";
+        class Sports {
+            static ["get"+type](kind){
+                return kind ? "스포츠":"음악"
+            }
+        }
+        console.log(Sports["get"+type](1)); //스포츠
+    </script>
+</body>
+</html>

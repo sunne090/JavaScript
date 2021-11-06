@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>컨텐츠1</li>
+        <li>컨텐츠2</li>
+        <li>컨텐츠3</li>
+        <li>컨텐츠4</li>
+        <li id="center">컨텐츠5</li>
+        <li>컨텐츠6</li>
+        <li>컨텐츠7</li>
+        <li>컨텐츠8</li>
+        <li>컨텐츠9</li>
+    </ul>
+    <script>
+        //노드색인은 가급적 쓰지 않는 것을 추전
+        document.getElementById("center").parentElement.style.border = "5px solid red"; //parentElement: 부모요소에 스타일 지정하겠다.
+        document.getElementById("center").previousElementSibling.style.backgroundColor = "lightgreen"; //previousElimentSibling: 이전형제요소에 스타일 지정하겠다.
+        document.getElementById("center").nextElementSibling.style.backgroundColor = "yellow";//nextElimentSibling: 나의 다음형제요소에 스타일 지정하겠다.
+
+        document.getElementById("list").firstElementChild.style.textDecoration = "underline"; //첫번째 자식요소에 스타일 지정
+        document.getElementById("list").lastElementChild.style.textDecoration = "underline"; //마지막 자식요소에 스타일 지정
+
+        for(const child of document.getElementById("list").children) {
+            child.style.color = "blue";
+        } //복수의 요소, 자식요소 전체에 스타일 지정하는 방법
+
+    </script>
+</body>
+</html>

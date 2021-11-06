@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html{
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .btn {
+            display: flex;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .tablink {
+            background-color: #555;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 1.1rem;
+            flex-grow: 1;
+        }
+        .tablink:hover {
+            background-color: #777;
+        }
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 100px 20px;
+            flex-grow: 1;
+        }
+        #Home {
+            background-color: red;
+        }
+        #News {
+            background-color: green;
+        }
+        #Contact {
+            background-color: blue;
+        }
+
+        #About {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="btn">
+            <button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+            <button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">News</button>
+            <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+            <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+        </div>
+        <div class="content">
+            <div id="Home" class="tabcontent">
+                <h3>Home</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem quasi iste at ex, dolores eligendi dolore doloremque. Reiciendis eum, facere fugiat consectetur molestias ipsum placeat dolorum explicabo, nemo voluptates inventore.</p>
+            </div>
+            <div id="News" class="tabcontent">
+                <h3>News</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, quibusdam quos accusamus necessitatibus, placeat tenetur aut mollitia eius fugit veritatis nam nulla velit nostrum excepturi, corrupti voluptatibus quas quidem explicabo!</p>
+            </div>
+            <div id="Contact" class="tabcontent">
+                <h3>Contact</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam corrupti similique quaerat provident mollitia deleniti ducimus consectetur eaque quis, amet reiciendis, deserunt numquam incidunt. Repellendus libero optio soluta placeat quasi?</p>
+            </div>
+            <div id="About" class="tabcontent">
+                <h3>About</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit laborum error vel eveniet aliquid odio. Repellendus dolores labore similique ipsum. Amet temporibus rerum sunt hic nemo pariatur nam dolor. Nobis!</p>
+            </div>
+        </div>
+    </div>
+<script>
+    function openPage(pageName, el, color){
+        const tabcontent = document.querySelectorAll(".tabcontent");
+        for (let index = 0; index < tabcontent.length; index++) {
+            tabcontent[index].style.display = "none";
+        }
+        const tablinks = document.querySelectorAll(".tablink");
+        for(let index = 0; index < tablinks.length; index++) {
+            tablinks[index].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        el.style.backgroundColor = color;
+    }
+
+    document.getElementById("defaultOpen").click();
+</script>
+</body>
+</html>

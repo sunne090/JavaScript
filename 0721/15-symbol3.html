@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sym = Symbol();
+       // +sym;  //Uncaught TypeError: Cannot convert a Symbol value to a number (넘버로 변환 불가능)
+       // "abc" + sym; //Uncaught TypeError: Cannot convert a Symbol value to a string (문자로 변환 불가능)
+       // sym | 0  //Uncaught TypeError: Cannot convert a Symbol value to a number
+        console.log(String(sym)+"연결"); //강제 형변환 가능
+        console.log(sym.toString()+"연결"); //이렇게도 사용 가능
+       // console.log(`${sym}`); //이렇게 사용 불가능(에러)
+    </script>
+</body>
+</html>

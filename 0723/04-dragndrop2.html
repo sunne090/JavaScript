@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            margin : 10px;
+            float : left;
+            list-style-type: none;
+        }
+        h2 {
+            clear : both;
+        }
+        ul {
+            background-color: #9c9c9c;
+            border-color : black;
+            border-width : 3px;
+            border-style : solid;
+            height: 200px;
+            width : 550px;
+        }
+    </style>
+</head>
+<body>
+    <h2>상품 목록</h2>
+    <ul id="items">
+        <li><img src="img/b1.png" alt="" id="b1" title="HTML5 + 자바스크립트"></li>
+        <li><img src="img/b2.png" alt="" id="b2" title="웹 표준 가이드"></li>
+        <li><img src="img/b3.png" alt="" id="b3" title="jQuery 입문"></li>
+    </ul>
+    <h2>장바구니</h2>
+    <ul id="cart">
+    </ul>
+    <button id="reset">리셋</button>
+    <script>
+        // 드래그에 대한 처리
+        // 1. img 요소에 dragstart 이벤트 리스너 지정
+        const imgs = document.querySelectorAll("#items>li>img");
+        for (const img of imgs) {
+            img.addEventListener("dragstart", function(e){
+                e.dataTransfer.setData("src",e.target.src);
+                e.dataTransfer.setData("title",e.target.title);
+            }, false);
+        }
+
+        // 드롭에 대한 이벤트 처리
+        const cart = document.querySelector("#cart");
+        // 이벤트 무효화
+        cart.addEventListener("dragenter", function(e){e.preventDefault();},false);
+        cart.addEventListener("dragover", function(e){e.preventDefault();},false);
+        // drop 에 대한 이벤트 치정
+        cart.addEventListener("drop", function(e){
+            e.preventDefault();
+            const types = e.dataTransfer.types;
+            if(!types.includes("src"))return;
+
+            const img = document.createElement("img");
+            img.src = e.dataTransfer.getData("src");
+            img.title = e.dataTransfer.getData("title");
+
+            const li = document.createElement("li");
+            li.append(img);
+            cart.append(li);
+        });
+
+        document.getElementById("reset").addEventListener("click", function(){
+            const lis = document.querySelectorAll("#cart > li");
+            for (const li of lis) {
+                 li.remove();
+            }
+        });
+    </script>
+</body>
+</html>

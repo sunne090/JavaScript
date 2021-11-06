@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 범위는 함수범위 내에서만 동작</title>
+</head>
+<body>
+    <script>
+        var a = "a";
+        function aa(){
+            var b = "b";
+            function bb(){
+                var c = "c"; //bb안에만 있으면 사용 가능, bb가 닫히면 소멸
+                function cc(){
+                    console.log(a,b,c);
+                }
+                console.dir(cc);
+                cc();
+                console.log(a,b,c);
+            }
+            bb();
+            //console.log(a,b,c); //c가 소멸되어서 없어서 에러
+            console.log(a,b); //c빼고 출력하면 오류x
+        }
+        aa(); //aa 함수가 닫혀서 b가 소멸
+        //console.log(a,b,c); //Uncaught ReferenceError: b is not defined
+        console.log(a);
+    </script>
+</body>
+</html>

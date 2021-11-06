@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #my-div {
+            height: 250px;
+            width: 400px;
+            padding: 10px;
+            margin: 15px;
+            border: 5px solid red;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="myFunction()">실행</button>
+    <div id="my-div">
+        <p id="demo"></p>
+    </div>
+    <script>
+        //clientWidth/clientHeight : padding까지의 가로, 세로 길이
+        //offset : padding, border까지 포함한 길이<-스크롤
+        function myFunction() {
+            const el = document.getElementById("my-div");
+            // let txt = "ClientHeight : "+el.clientHeight; + "px";
+            // txt += "ClientWidth : "+el.clientWidth; + "px";
+            // document.getElementById("demo").textContent = txt;
+            let txt = "ClientHeight : "+el.offsetHeight; + "px";
+            txt += "ClientWidth : "+el.offsetWidth; + "px";
+            document.getElementById("demo").textContent = txt;
+        }
+    </script>
+</body>
+</html>

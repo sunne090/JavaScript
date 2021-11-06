@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name, age){
+            this.name = name || "이름없음";
+            this.age = age || "나이모름";
+        }
+        Person.prototype.getName = function(){
+            return this.name;
+        }
+        Person.prototype.getAge = function(){
+            return this.age;
+        }
+        function Employee(name, age, position){
+            this.name = name || "이름없음";
+            this.age = age || "나이모름";
+            this.position = position || "직책모름";
+        }
+        Employee.prototype = new Person();
+        Employee.prototype.constructor = Employee;
+        Employee.prototype.getPosition = function(){
+            return this.position;
+        }
+         //상속 후 기능을 작성해야 함
+        const obj = new Employee("곰", 38, "엔지니어");
+
+        console.log(obj.getName());
+        console.log(obj.getAge());
+        console.log(obj.getPosition());
+        console.dir(obj);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><input type="radio" name="choice" id="" class="rd1" value="1"></li>
+        <li><input type="radio" name="choice" id="" class="rd1" value="2"></li>
+        <li><input type="radio" name="choice" id="" class="rd1" value="3"></li>
+        <li><button id="click">클릭</button></li>
+    </ul>
+    <script>
+        document.querySelector("#click").addEventListener("click", function(){
+            let rd = document.getElementsByClassName("rd1");
+            //console.log(rd.length);
+            for (let index = 0; index < rd.length; index++) {//rd의 길이만큼 돌면서
+                if(rd[index].checked){//체크된 것이 있으면
+                    console.log(rd[index].value);//값을 출력하라
+                }
+            }
+        });
+        
+        // document.getElementById("click").addEventListener("click", function(){
+        //     let rd = document.getElementsByClassName("rd1");
+        //     //console.log(rd.length);//3
+        //     for(let index = 0; index < rd.length; index++){
+        //         if(rd[index].checked){
+        //             console.log(rd[index].value);//체크된 것의 값을 출력해라
+        //         }
+        //         //console.log(rd[index].value);//123
+        //         }
+        // });
+    </script>
+</body>
+</html>

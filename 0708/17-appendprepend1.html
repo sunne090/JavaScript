@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">
+        <p>기존에 있던 내용</p>
+        <p>기존에 있던 내용</p>
+        <p>기존에 있던 내용</p>
+    </div>
+    <script>
+        // let c = document.getElementById("content");
+        // let p1 = document.createElement('p');
+        // let con1 = document.createTextNode('컨텐츠1');
+        // p1.append(con1); // <p>컨텐츠1</p>
+        // c.append(p1);
+        //append : 부모 요소 아래쪽에 붙일 때 사용, 무조건 최하단의 div
+        //c.prepend(p1);
+        //prepend: 부모요소 위쪽에 붙일 때 사용, 무조건 최상단에 div
+
+        // p1.style.backgroundColor = "pink";
+        // p1.style.border = "5px solid black";
+
+        let a = document.querySelector("#content");//content라는 div위치 가져오기
+        let h1 = document.createElement('h1');//h1이라는 태그 사용하기 위해 생성하기
+        let con2 = document.createTextNode('내가 만든 컨텐츠');//태그 안에 들어갈 내용 작성하기
+        
+        h1.prepend(con2);//h1요소 안에 '내가 만든 컨텐츠'라는 내용 넣기
+        a. prepend(h1);//div 콘텐츠 안에 h1 태그로 만든 거 집어넣기.
+
+        h1.style.backgroundColor = "purple";
+        h1.style.color = "white";
+        a.style = "width: 300px; height: 200px";
+
+
+        let b = document.querySelector("#content");
+        let bold = document.createElement('b');
+        let con3 = document.createTextNode('굵은 글씨의 컨텐츠');
+
+        bold.append(con3);
+        b.append(bold);
+
+    </script>
+</body>
+</html>

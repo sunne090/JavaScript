@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let lunch = {
+           doh : "백숙",
+           min : "감자전",
+           su : "시리얼" 
+        }
+
+        console.log("doh" in lunch); //true
+        console.log("sun" in lunch); //false
+        //in : key가 lunch라는 객체에 존재하는지 여부
+
+        with(lunch){ //하나의 객체를 계속 참조할 때 사용
+            console.log(doh);
+            console.log(min);
+            console.log(su);
+        }
+    </script>
+</body>
+</html>

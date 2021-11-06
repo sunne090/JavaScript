@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = {
+            aa : 123,
+            bb : "hello"
+        };
+
+        //console.dir(a);
+
+        //console.log(a.__proto__.toString());
+        //console.dir(a.toString()); //위랑 동일
+
+        a.__proto__.protoX = 456;
+        console.log(a.protoX); //456
+
+        a.__proto__.funcA = function(){
+            console.log("프로토타입에서 선언된 함수");
+        }
+        a.funcA(); 
+
+        const b = {
+            aa : 987,
+            bb : "world"
+        }
+        console.log(b.protoX);
+        b.funcA(); // a의 프로토타입에 선언했는데 b에서도 실행됨
+        //a에서 객체 안에 protoX와 funcA를 선언해두고
+        //b는 a와 같은 객체를 참조하고 있기 때문에 메모리 주소가 같아서 가능
+        //a.__proto__.protoX = 456; a객체를 지정한 후 프로토타입을 만들어도 최상위 object에 생성됨
+        
+
+        console.dir(a);
+        console.dir(b);
+    </script>
+</body>
+</html>

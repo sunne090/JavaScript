@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //localeCompare: 문자열을 비교해서 값을 숫자로 표현해주는 것
+        // console.log("a".localeCompare("b")); //-1 a<b
+        // console.log("b".localeCompare("a")); //1 b>a
+        // console.log("b".localeCompare("b")); //0 b = b
+
+        const list = ["책","선풍기","에어컨","김치","짜장면","테이블","랜턴"];
+
+        Array.from(list)//리스트 기준으로 배열 사용하겠다.
+        // .sort(function (a,b) {return a.localeCompare(b)})
+        // .forEach(function (item){console.log(item)}); //오름차순
+        .sort(function (a,b) {return b.localeCompare(a)})
+        .forEach(function (item){console.log(item)}); //내림차순
+        //foreach : 아이템 각각 꺼내서 실행시키고자 할 때 사용 for each문과 동일
+    </script>
+</body>
+</html>

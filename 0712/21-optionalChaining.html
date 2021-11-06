@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const objA = {
+            user : {
+                name: "abc",
+                score : {
+                    kor : 82,
+                    eng: 75
+                }
+            }
+        }
+
+        console.log(objA.user.score.kor);
+        console.log(objA.user.score.math);
+
+        //console.log(objA && objA.user && objA.user.score && objA.user.score.math); 옛날방식
+
+        console.log(objA?.user?.score?.kor);
+        console.log(objA?.user?.score?.math); //오류가 나지 않고 undefined가 뜨게 한다.
+        //최신방식
+        objA?.user?.funcA?.(); //메서드 옵셔널 체이닝
+    </script>
+</body>
+</html>

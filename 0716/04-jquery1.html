@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    
+    <script>
+        //1.
+        // window.addEventListener("DOMContentLoaded",function(){
+        //     document.querySelector(".content").style.color = "red";
+        // }); //순서를 바꿔서 사용해도 된다.(DOMContentLoaded)
+        //2.
+        // $(document).ready(function(){
+        //     $(".content").css("color","red");
+        // });
+        //3.
+        $(function(){
+            $(".content").css("color","red");
+        });
+        //셋 다 동일한 결과, jquery는 DOM을 좀 더 쉽게 쓰기 위한 라이브러리
+    </script>
+    <p class="content">안녕하세요 jquery 입니다</p> 
+</body>
+</html>

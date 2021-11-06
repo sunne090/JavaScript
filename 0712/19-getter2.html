@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const objA = {
+            set foo(val){
+                delete this.foo;
+                this.foo = val;
+            },
+            get foo(){
+                //delete this.foo;
+                return this.foo = "something";
+            },//지우고 갱신했는데
+            set foo1(val){
+                delete this.a;
+                this.a = val;
+            },
+            get foo1(){
+                //delete this.foo;
+                return this.a = "something";
+            }//지우고 갱신했는데
+        };
+
+        objA.foo = "test";
+        console.log(objA.foo);//test 나온다, 다른 값이 나오기 전까지 계속 저장이 돼서 값이 그대로 남아있는 것
+        //delete를 해도 값이 캐싱하고 있어서 사용에 주의해야 한다, 다른 값이 나올 수 있음
+        //삭제는 객체 밖 등에서 해야 확실하게 삭제 됨
+        objA.foo1 = "test1";
+        console.log(objA.foo1);//something
+    </script>
+</body>
+</html>

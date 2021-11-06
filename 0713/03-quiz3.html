@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            flex-grow: 1;
+            text-align: left;
+            font-size: 15px;
+            transition: 0.45s;
+            border: none;
+        }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+        .pannel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="accordion">Section1</button>
+        <div class="pannel">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum magnam voluptates veritatis eius iste inventore, eveniet velit magni explicabo fuga libero officiis voluptas delectus maiores aliquid, ex numquam nostrum. Iure?</p>
+        </div>
+        <button class="accordion">Section2</button>
+        <div class="pannel">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos asperiores numquam modi. Aliquam, excepturi repudiandae assumenda id dolores voluptatem quasi neque veniam explicabo omnis, sunt aut labore perferendis fuga itaque?</p>
+        </div>
+        <button class="accordion">Section3</button>
+        <div class="pannel">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores debitis dolor deserunt eaque harum? Quos, voluptatem eius libero quia ratione magnam animi saepe est vel adipisci dolores, hic eum praesentium.</p>
+        </div>
+    </div>
+
+    <script>
+        const acc = document.querySelectorAll(".accordion");
+        for (let index = 0; index < acc.length; index++) {
+            acc[index].addEventListener("click", function(){
+                this.classList.toggle("active");
+                const pannel = this.nextElementSibling;
+                if(pannel.style.maxHeight){
+                    pannel.sytle.maxHeight = null;
+                } else{
+                    pannel.style.maxHeight = pannel.scrollHeight+"px";
+                }
+            })
+        }
+    </script>
+</body>
+</html>

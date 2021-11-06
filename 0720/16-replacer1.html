@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function replacer(key, value) {
+            if(typeof value == "string"){
+                return undefined;
+            }
+            return value; //replacer 리턴은 value로만 해야됨
+        } //문자열이 아닌 것만 출력할 것이다.
+        const foo = {foundation : "Mozila", model : "box", weak: 45, transport : "car", month: 7};
+        const jsonString = JSON.stringify(foo, replacer, "\n"); //replacer은 함수명, 다른 이름으로 사용해도 되는데 일치시켜야 됨
+        console.log(jsonString);  //{"weak":45,"month":7}
+    </script>
+</body>
+</html>

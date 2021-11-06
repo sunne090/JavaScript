@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $(".txt1").animate({marginLeft : "200px"}, 1000)
+            .animate({marginTop : "200px"}, 1000)
+            // .animate({marginLeft: 0}, 1000)
+            // .animate({marginTop: 0}, 1000);//애니메이션 겹치기(사각형 그리기) -> 순서대로 실행
+            .queue(function(){
+                $(this).css({backgroundColor : "orange"});
+                $(this).dequeue(); //큐는 원래 뒤에 애니메이션 실행X, dequeue를 통해서 뒤 애니메이션 실행하게 함
+            })
+            .animate({marginLeft: 0}, 1000)
+            .animate({marginTop: 0}, 1000);
+        });
+    </script>
+    <style>
+        .txt1{
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            background-color: indianred;
+        }
+    </style>
+</head>
+<body>
+    <p class="txt1">내용1</p>
+</body>
+</html>

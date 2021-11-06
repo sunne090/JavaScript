@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict" //문법에 대한 강력한 검사를 실시하는 코드
+        //코드의 난독화를 가중시키기 때문에 잘 사용하지는 않음
+
+        var a = 300;
+        function aaa(){
+            a = 100;
+            console.log(a); //100
+        }
+        aaa();
+        console.log(a);//100 aaa()안에 var없이 a=100하면 밖에서 호출해도 100나옴
+    </script>
+</body>
+</html>

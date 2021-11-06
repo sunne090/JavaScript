@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="v1">
+    <input type="text" name="" id="v2">
+    <button id = btn>연산</button>
+    <script>
+        
+        document.querySelector("#btn").addEventListener("click", function(){
+            let v1 = Number(document.querySelector("#v1").value);
+            let v2 = Number(document.querySelector("#v2").value);
+            (v1 == v2)? alert("같다"):(v1 > v2)?document.write("크다"):document.write("작다");
+        });
+    </script>
+</body>
+</html>

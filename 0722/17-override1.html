@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Sports {
+            constructor(member){
+                this.member = member;
+                console.log(member);
+            }
+            setGround(ground){
+                this.ground = ground;
+            }
+        }
+        class Soccer extends Sports {
+            constructor(member){
+                super(member); //자식객체에서 constructor를 사용해야 할 경우 super를 사용해야 한다.
+                this.member = "해리케인"
+                console.log(this.member);
+            }
+            setGround(ground){
+                this.ground = ground+1;
+            }
+        }
+        const obj = new Soccer()
+        obj.setGround("토트넘 홋스퍼 스타디움");
+        console.log(obj.ground);
+    </script>
+</body>
+</html>

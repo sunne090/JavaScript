@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a;
+        a = 10;
+
+        let b = abc; //b->주소 몇번지 가리킴 -> 주소가 값 abc 가리킴
+        b = false; // 기존 값 abc를 버리고 false로 덮어씀
+
+        let c = b; //c는 b의 주소값을 찾아가서 값을 그대로 가지고 옴
+
+        c = 20; //기존에 참조하던 false값을 버리고 20으로 덮어씀
+    </script>
+</body>
+</html>

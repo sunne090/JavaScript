@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let v1 = Number(prompt('1~5까지의 숫자를 입력하세요.'));
+        // switch (v1) {
+        //     case 1: //elseif(v1===1) 타입까지 확인
+        //         console.log('v1은 1입니다.');
+        //         break;
+        //     case 2:
+        //         console.log('v1은 2입니다.');
+        //         break;
+        //     case 3:
+        //         console.log('v1은 3입니다.');
+        //         break;
+        //     case 4:
+        //         console.log('v1은 4입니다.');
+        //         break;
+        //     default:
+        //         console.log('해당되는 값이 없습니다.');
+        //         break;
+        // }
+        // switch (v1) {
+        //     case 1: //elseif(v1===1) 타입까지 확인
+        //         console.log('v1은 1입니다.');
+        //     case 2:
+        //         console.log('v1은 2입니다.');
+        //     case 3:
+        //         console.log('v1은 3입니다.');
+        //     case 4:
+        //         console.log('v1은 4입니다.');
+        //     default:
+        //         console.log('해당되는 값이 없습니다.');
+        // }
+        //break가 없으면 switchcase문을 빠져나오지 못해서 출력값 밑에 있는 값들도 전부 출력 됨
+
+        switch (v1) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                console.log('v1은 1부터 5사이의 숫자입니다.');
+                break;
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+                console.log('v1은 6부터 10 사이의 숫자입니다.');
+                break;
+            default:
+                console.log('해당되는 값이 없습니다.');
+                
+        }
+    </script>
+</body>
+</html>

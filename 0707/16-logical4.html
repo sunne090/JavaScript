@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(`'Cat' || 'Dog' => ${'Cat' || 'Dog'}`);//Cat
+        console.log(`'Cat' || false => ${'Cat' || false}`);//Cat
+        console.log(`false || 'Dog' => ${ false || 'Dog'}`);//Dog
+        // ||: 문자열 중 하나라도 값이 있으면 그 값 리턴, 두 값 중에서는 앞에꺼 출력
+
+        console.log(`'' || false => ${'' || false}`);//false
+        console.log(`'abc' || false => ${'abc' || false}`);//abc
+    </script>
+</body>
+</html>

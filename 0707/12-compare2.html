@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(`1 == 1 => ${1==1}`);//true
+        console.log(`1 == 2 => ${1==2}`);//false
+        console.log(`1 != 2 => ${1!=2}`);//true
+
+        console.log(`"1" == 1 => ${"1" == 1}`);//true
+        console.log(`true == 1 => ${true == 1}`);//true
+
+        //동등연산자, 부등연산자는 타입에 관계없이 해당 값이 같으면 true, 다르면 false
+
+        console.log(`"1234" == 1234 => ${"1234"==1234}`); //true
+
+        console.log(`"1234" === 1234 => ${"1234" === 1234}`);//false, ===은 타입까지 같아야 함
+
+        console.log(` 0 == false => ${0==false}`);//true
+        console.log(`false == null => ${false == null}`);//false
+        console.log(`false == undefined => ${false == undefined}`);//false
+        console.log(`null == undefined => ${null == undefined}`);//true
+        console.log(`null === undefined => ${null === undefined}`);//false
+    </script>
+</body>
+</html>

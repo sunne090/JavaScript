@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj1 = { foo : "bar", x : 42};
+
+        //const cloneObj = obj1; 이렇게 하면 주소값을 같이 참조하게 되어서 cloneObj가 수정되면 obj1도 수정된다
+        //console.log(cloneObj == obj1); 이러면 true, 참조값이 같기 때문
+        const cloneObj = {...obj1}; //맨처음 초기화는 const에 값 입력할 수 있고, ...obj1은 값을 저장하는 것이기 때문에 문제x, 이 이후에 값이 갱신되는 경우에는 오류(const 값 갱신X) 
+        //스프레드 연산자는 배열 뿐만 아니라 객체에도 사용 가능, 객체에 대한 복사 하는 방법
+        console.log(cloneObj); //{foo: 'bar', x: 42}
+        console.log(cloneObj == obj1); //false 다른객체임, cloneObj라는 객체를 새로 생성해서 값만 obj1의 값을 스프레드 연산자를 통해서 가져오는 방법(객체의 내용을 참조하는 것이 아니라 복사하는 것)
+    </script>
+</body>
+</html>

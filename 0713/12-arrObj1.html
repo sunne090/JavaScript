@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr1 = ["apple","orange","banana"];
+        console.log(arr1.length); //3
+
+        arr1.color = "blue";
+        arr1.name = "myArray";
+        console.log(arr1.length);
+
+        arr1["prop"] = "과일";
+        console.log(arr1.length);//3
+        //인덱스에 값을 넣어야 길이가 늘어남
+
+        arr1[3] = "kiwi";
+        console.log(arr1.length); //4
+    </script>
+</body>
+</html>

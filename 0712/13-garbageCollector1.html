@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let objA = {
+            a : 1,
+            b : "b"
+        }
+        objA = {
+            c : 2
+        }
+        console.log(objA.c);//2
+
+        //non-primitive : 메모리를 바꾸지 못하도록 강제성을 부여하기 위해서 사용
+        //garbage-collector가 소모하는 프로세스가 매우 크기 때문에 대체자로 사용하는 것
+    </script>
+</body>
+</html>

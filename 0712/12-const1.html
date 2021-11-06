@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const objA = { //const: 상수화
+            a : 12,
+            b : "b"
+        }
+        // objA = {
+        //     c : 3
+        // } //수정된 거라 에러남
+        // console.log(objA);
+
+        objA.a = 19; //바꿀 수 있음
+        console.log(objA.a);// const 안에 있는 a는 12인데 위에서 값 재선언해서 19로 바꿀 수 있다. 이 값까지는 const 의 범위가 아님
+        //값이 바뀌는 이유는 참조하는 주소가 고정되고 참조하는 주소가 참조하는 값은 바뀌지 않는다.
+
+        //const는 non-primitive 타입에서 메모리를 fix 시키는 역할
+        // non-primitive 타입에서는 거의 const를 사용
+
+        //상수화
+        // 1. 무조건 초기화가 들어가야 한다.
+        // 2. 값을 절대 바꿀 수 없다.
+
+        // const a = 1;
+        // a = 2; //에러, 상수의 값은 재선언을 통해 바꿀 수 없음
+
+        // let objB = objA;
+        // console.log(objB.a);//12
+        // console.log(objA.a);//12
+        //안쪽 값은 수정이 가능하다. 주솟값이 수정 불가능
+
+        const objB = objA; //참조하는 것은 let이나 const나 상관없음
+        objB.a = 12
+        // objB = {
+
+        // } 이렇게 objB를 재선언 하면 문제가 생김
+        console.log(objB.a);//12
+        console.log(objA.a);//12
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+            getName() {
+                return this.name;
+            }
+            getAge() {
+                return this.age;
+            }
+        }
+
+        class Employee extends Person {
+            constructor(name, age, position){
+                super(name, age); //부모 객체 가리키는 역할(Person), 부모의 생성인자를 모두 입력해서 사용해야 함.
+                this.position = position;
+            }
+            getPosition() {
+                return this.position;
+            }
+        }
+
+        const obj = new Employee("스폰지밥", "12", "요리사");
+        console.log(obj.getName());
+        console.log(obj.getAge());
+        console.log(obj.getPosition());
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="rsp">
+    <button id="action">가위바위보</button>
+    <div id="result"></div>
+    <script>
+        
+        document.querySelector("#action").addEventListener("click",function(){
+            let user = document.querySelector("#rsp").value;
+            let com = Math.floor(Math.random()*(3 - 1 + 1))+1;
+            // console.log(com);
+            let result = document.querySelector("#result");
+            //1. 중첩 if문
+            //1. 가위, 2. 바위, 3. 보
+            // if(user == com){
+            //     result.innerHTML = `<h1>비겼습니다.</h1>`
+            // } else if(user == 1){
+            //     if(com == 2){
+            //         result.innerHTML = `<h1>졌습니다.</h1>`;
+            //     }else{
+            //         result.innerHTML = `<h1>이겼습니다.</h1>`
+            //     }
+            // }else if(user == 2){
+            //     if(com == 1){
+            //         result.innerHTML = `<h1>이겼습니다.</h1>`
+            //     }else{
+            //         result.innerHTML = `<h1>졌습니다.</h1>`;
+            //     }
+            // }else{
+            //     if(com == 1){
+            //         result.innerHTML = `<h1>졌습니다.</h1>`;
+            //     }else{
+            //         result.innerHTML = `<h1>이겼습니다.</h1>`
+            //     }
+            // }
+            //2. &&, ||문을 이용한 if문 작성
+            // if(user == com){
+            //     result.innerHTML = `<h1>비겼습니다</h1>`;
+            // } else if( (user == 1 && com == 3) || (user == 2 && com == 1) || (user == 3 && com == 2)){
+            //     result.innerHTML = `<h1>이겼습니다.</h1>`
+            // }else{
+            //     result.innerHTML = `<h1>졌습니다.</h1>`;
+            // }
+            //3. 점화식을 이용하는 방법
+            //  if(user == com){
+            //     result.innerHTML = `<h1>비겼습니다</h1>`;
+            // } else if(user == (com%3+1)){
+            //     result.innerHTML = `<h1>이겼습니다.</h1>`
+            // }else{
+            //     result.innerHTML = `<h1>졌습니다.</h1>`;
+            // }
+            //4. 조건문을 사용하지 않은 점화식
+            let str =  (user == com)? "비겼습니다" :(user == (com%3+1))? "이겼습니다":"졌습니다";
+            result.innerHTML = `<h1>${str}</h1>`;
+            console.log(com);
+        });
+    </script>
+</body>
+</html>

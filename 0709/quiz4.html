@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+                
+        #root button { 
+            width: 100px;
+            height: 50px;
+            color: white;
+            background: hsl(350, 72%, 62%);
+            font-weight: bold;
+            display:inline-block;
+            font-weight: 100%;
+            z-index: 0;
+        }        
+                
+        #modal {
+            display: none;    
+            position:relative;
+            width:100%;
+            height:100px;
+            z-index: 2;
+        }
+        
+        #modal .modal_content {
+            width:80%;
+            margin:30px auto;
+            padding:20px 10px;
+            background: white;
+            border:2px solid #666;
+            z-index: 99;
+        }
+        
+        #modal .modal_layer {
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:300px;
+            background-color: gray;
+            opacity: 0.7;
+            z-index: -1;
+        }   
+        </style>
+</head>
+<body>
+    <div id="root">
+        <button type="button" id="modal_opne_btn">버튼 클릭</button>       
+    </div>
+    <div id="modal">   
+        <div class="modal_content">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam earum enim ullam? Obcaecati quisquam libero veritatis ipsam accusantium iure ab a, tempore expedita necessitatibus id sit quam nam voluptatum aliquam.</p>
+        </div>
+        <div class="modal_layer"></div>
+    </div>
+    
+
+    <script>
+        document.querySelector("#modal_opne_btn").onclick = function() {
+            document.querySelector("#modal").style.display="block";
+        }  
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj1 = {foo: "bar", x: 42};
+        const obj2 = {foo: "bar2", y: 13};
+
+        const mergeObj = {...obj1, ...obj2};
+        //foo라는 key가 동일하기 때문에 키값을 참조해서 값을 가져오는데 기존주소->새로운 주소로 값을 가져오게 된다(같은 주소 참조는 아님). 원래값은 가비지콜렉터에 의해 삭제
+        console.log(mergeObj); //{foo: 'bar2', x: 42, y: 13} ->두 키가 동일할 경우 나중에 적용된 것으로 덮어지고 동일하지 않은 키는 같이 출력된다.
+    </script>
+</body>
+</html>

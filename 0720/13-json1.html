@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = JSON.parse("{}");
+        console.log(a); //{}
+
+        let b = JSON.parse("true");
+        console.log(b); //true -> boolean
+
+        let c = JSON.parse(`"foo"`);
+        console.log(c); //foo
+
+        let d = JSON.parse(`[1,5,"false"]`);
+        console.log(d); //(3) [1, 5, 'false'] 배열 형태
+
+        let e =JSON.parse("null");
+        console.log(e); //null
+
+        let f = JSON.parse(`{"a":1, "b":"abc"}`);
+        console.log(f); //{a: 1, b: 'abc'} 객체
+    </script>
+</body>
+</html>

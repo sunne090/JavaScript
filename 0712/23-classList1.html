@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cls1 {
+            color: yellowgreen;
+        }
+        .cls2 {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <p class="cls1" id="words">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel minima quos qui odit esse, tenetur accusantium eius sit similique illum? Suscipit aliquid minus reiciendis iusto placeat quis, dolores rerum consectetur?</p>
+    <button id="btn">토글</button>
+    <script>
+        document.querySelector(".cls1").classList.add("cls2");//클래스 추가하기
+        document.querySelector(".cls2").classList.remove("cls1");//클래스 지우기
+        console.log(document.querySelector("#words").classList.contains("cls2"));
+        document.querySelector("#btn").addEventListener("click", function(){
+            document.querySelector("#words").classList.toggle("cls3");
+        });
+    </script>
+</body>
+</html>

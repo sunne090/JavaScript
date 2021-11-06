@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>난 다음 나라에 방문한 적이 있습니다.</p>
+    <ul>
+        <li>미국</li>
+        <li>일본</li>
+        <li>중국</li>
+    </ul>
+    <script>
+        document.addEventListener("mouseup", function(){
+            const sel = window.getSelection();
+            let text = sel.toString();
+            if(text) //alert(text); 
+                alert("이 블로그의 글은 복사가 불가능합니다.");
+        });
+    </script>
+</body>
+</html>

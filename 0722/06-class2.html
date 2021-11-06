@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Class1 {
+            age = 25;
+            item = "레고";
+            
+            getAge(){
+                return this.age
+            }
+        }
+        Class1.prototype.setItem = function(item){
+            this.item = item;
+        }
+        Class1.prototype.getItem = function(){
+            return this.item;
+        }
+        const cl1 = new Class1();
+        cl1.setItem("변신로봇");
+        console.log(cl1.getItem());
+    </script>
+</body>
+</html>

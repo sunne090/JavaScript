@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //예외 강제 발생
+        // try {
+        //     throw "이런~"
+        // }catch(error){
+        //     console.log(error);
+        // }
+
+        // const obj = {
+        //     param1 : 'foo',
+        //     paran2 : 'bar'
+        // };
+
+        // try{
+        //     throw obj;
+        // }catch(e){
+        //     console.log(e.param1); //foo
+        //     console.log(e.paran2); //bar
+        // }
+
+        //정상적인 사용 방법
+        try{
+            throw new Error("저런~");
+        }catch(e){
+            console.log(e.name + ": "+e.message);
+        }
+    </script>
+</body>
+</html>

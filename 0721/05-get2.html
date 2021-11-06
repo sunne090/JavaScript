@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div></div>
+    <button>전송받기</button>
+    <script>
+        $("button").click(function(){
+            // $.get("http://localhost:2000/get_request2",function(data, status){
+            //     $("div").html(`name : ${data.name}, age : ${data.age}`);
+            // });
+            $.get("http://localhost:2000/get_request2",function({name, age}, status){
+                $("div").html(`name : ${name}, age : ${age}`);
+            }); //구조분해할당으로 단순화 가능
+        });
+    </script>
+</body>
+</html>

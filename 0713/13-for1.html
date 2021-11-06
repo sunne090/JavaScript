@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const items = ["item1","item2","item3"];
+
+        items.name = "abc";
+        items.age = 41;
+
+        items[8] = "item4";
+
+        // for (let index = 0; index < array.length; index++) {
+        //     console.log(items[index]);
+        // } //일반for문
+
+        let i = 0;
+        for(const key in items){
+            console.log(`${key} : ${items[key]}`);
+            i++;
+        } //뒤에 객체 추가해도 순회 가능, 배열 길이에 관계 없이 루프 돌림
+    </script>
+</body>
+</html>

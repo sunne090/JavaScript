@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sync1(){
+            setTimeout(() => {
+                console.log(1);    
+            }, 1000);
+        }
+        function sync2(){
+            console.log(2);
+        }
+        function sync3(){
+            console.log(3);
+        }
+        sync1();
+        sync2();
+        sync3();
+        //동기 : 순서대로 실행, 여기서 sync1에 timeout을 주면 순차실행이 안된다.
+    </script>
+</body>
+</html>

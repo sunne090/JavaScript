@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // pending 대기상태
+        const pending = new Promise((resolve, reject) => {});
+        console.log(pending);
+
+        // fulfilled 성공상태
+        const fulfilled = new Promise((resolve, reject) => resolve("fulfilled"));
+        console.log(fulfilled);
+
+        //rejected 실패상태
+        const rejected = new Promise((resolve, reject) => {
+            throw new Error("rejected가 남");
+            reject();
+        });
+        console.log(rejected);
+    </script>
+</body>
+</html>

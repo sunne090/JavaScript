@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class ExtendsImage extends Image {
+            setProperty(image){
+                this.src = image.src;
+                this.alt = image.alt;
+                this.title = image.title;
+            }
+        }
+
+        const imgObj = new ExtendsImage();
+
+        const properties = {
+            src : "images/profile.jpg",
+            alt : "나의 프로필",
+            title : "프로필"
+        }
+
+        imgObj.setProperty(properties);
+        document.querySelector("body").append(imgObj);
+    </script>
+</body>
+</html>

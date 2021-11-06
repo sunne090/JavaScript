@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                $("#div1").load("demo_text1.txt");
+            });
+        });
+        // 라이브서버는 서버가 없어도 서버를 잡아서 실행 가능하게 함(라이브서버로 실행하면 작동 됨)
+    </script>
+</head>
+<body>
+    <div id="div1">글이 들어올 자리</div>
+    <button>전송</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const callback = function(){
+            console.dir(this);
+        }
+
+        const obj = {
+            a : 1,
+            b : function(cb){
+                // cb(); //window 출력
+                // console.log(this); //obj의 this
+                cb.call(this);//obj의 this(오브젝트를 가리킴) == this.cb(); cb라는 함수가 없지만 있는것처럼 실행시켜서 보여줌
+            }
+        }
+
+        obj.b(callback); //window -> {a: 1, b: ƒ}
+    </script>
+</body>
+</html>

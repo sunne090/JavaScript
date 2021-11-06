@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //유니코드로 변환시켜서 나온 결과를 정렬
+        const arr1 = [1,4,2,3,5];
+        arr1.sort();
+        console.log(arr1); //(5) [1, 2, 3, 4, 5] sort: 정렬함수
+
+        const arr2 = ["3","32","1","10"];
+        arr2.sort();
+
+        const arr3 = arr1.slice(0,2);
+        console.log(arr1);
+        console.log(arr3);
+
+        const arr4 = arr1.splice(0,2);
+        console.log(arr1);
+        console.log(arr4);
+
+        arr2.length = 9;
+        arr2.push("50");
+        console.log(arr2); //중간을 비우고 10번째에 push 50을 해버림
+    </script>
+</body>
+</html>

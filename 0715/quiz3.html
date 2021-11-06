@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #search {
+            width: 500px;
+            height: 30px;
+            font-weight: bold;
+            border: 1px solid #ddd;
+            margin-left: 35px;
+        }
+        ul {
+            list-style-type: none;
+            
+        }
+        li {
+            font-size: 1.1rem;
+            width: 500px;
+            height: 30px;
+            border: 1px solid #ddd;
+            background-color: #ccc;
+        }
+        li:hover {
+            background-color: lightslategray;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="search" placeholder="Search for names..">
+    <ul class="list">
+        <li class = "list-item" id="a" value="Adele">Adele</li>
+        <li class = "list-item" id="b">Agnes</li>
+        <li class = "list-item" id="c">Billy</li>
+        <li class = "list-item" id="d">Bob</li>
+        <li class = "list-item" id="e">Calvin</li>
+        <li class = "list-item" id="f">Christina</li>
+        <li class = "list-item" id="g">cindy</li>
+    </ul>
+    <script>
+        let li = document.getElementsByClassName("list").children;
+        let ul = document.getElementsByClassName("list")
+        
+        // document.getElementById("search").addEventListener("keyup",function(){
+        //     const U = this.value.toUpperCase();
+            
+        // })
+       
+       
+    </script>
+</body>
+</html>

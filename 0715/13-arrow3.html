@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let get = value => value + 10;
+        console.log(get(20));//30
+
+        let get2 = () => 3 + 4;
+        console.log(get2());//7
+
+        let get3 = () => ({sports: "축구"});
+        console.log(get3()); //객체를 반환하고 싶다면 객체를 괄호로 감싸야 함
+
+        // let get4 = () => {
+        //     let args = arguments;
+        //     console.log(args);
+        // } //애로우함수 내에서 arguments 사용 불가
+        // console.log(get4());
+
+        function funcA() {
+            console.log(arguments);
+        }
+        funcA(1,2,3);
+    </script>
+</body>
+</html>

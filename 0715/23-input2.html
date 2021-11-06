@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" id="myForm" method="get">
+        Name : <input type="text" id="myInput" required pattern=".{6,}">
+        <button type="submit">submit</button>
+    </form>
+    <script>
+        document.getElementById("myInput").addEventListener("invalid",function(){
+            console.log("6글자 이상 입력");
+        }); //6글자 이상 입력 기준 충족시에만 제출 가능
+
+        document.getElementById("myForm").addEventListener("submit",function(){
+            console.log("submit 이벤트");
+        }); //submit 눌렀을 때 발생하는 이벤트(제출기능)
+    </script>
+</body>
+</html>

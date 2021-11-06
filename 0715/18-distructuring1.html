@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let one, two, three, four, five;
+        const values = [1,2,3];
+
+        // one = values[0];
+        // two = values[1];
+        // three = values[2];//옛날방식
+
+        [one, two, three] = values;
+        console.log(one, two, three);  //1 2 3
+        //-> distructuring: 구조분해할당
+
+        [one, two] = values;
+        console.log(one, two);//1 2
+
+        [one, two, three, four] = values;
+        console.log(one, two, three, four); //1 2 3 undefined
+
+        const values2 = [1, 2, [11, 12]];
+        [one, two, [three, four]] = values2;
+        console.log(one, two, three, four); //1 2 11 12
+
+        [one,,,four] = [1,2,3,4];
+        console.log(one, four); //1, 4
+
+        let other;
+        [one, ...other] = [1,2,3,4];
+        console.log(one, other);//1 [2,3,4]
+    </script>
+</body>
+</html>

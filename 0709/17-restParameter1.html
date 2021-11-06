@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function func(...rest){//이름 아무거나 넣어도 됨
+            console.log(rest);
+        }
+        func(1,2,3,4,5,6,7,8,9);
+
+        function func1(a, b, ...rest){//rest를 앞으로 보내면 안됨
+            console.log(a);
+            console.log(b);
+            console.log(rest);
+        }
+        func1(1,2,3,4,5,6,7); //1, 2는 출력되고 나머지는 rest 파라미터 안으로 들어감(배열로 저장)
+    </script>
+</body>
+</html>

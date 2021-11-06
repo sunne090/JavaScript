@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $(".p1").on("mouseout",function(){
+                $(".p1").css("background-color","yellow");
+            }); //안쪽에 있더라도 태그 안에서 다른 영역으로 간 것을 빠져나갔다고 함
+            $(".p2").on("mouseleave",function(){
+                $(".p2").css("background-color","green");
+            }); //안쪽에서 바깥으로 완전히 빠져나간 것을 나간 것으로 함
+        });
+    </script>
+</head>
+<body>
+    <p class="p1"><span>Lorem</span> ipsum dolor sit amet consectetur adipisicing elit. Tempora, laudantium vero? Ab eius numquam nemo exercitationem assumenda sapiente eaque voluptatibus quae. Voluptas culpa suscipit magni recusandae aspernatur ullam quibusdam cum.</p>
+    <p class="p2"><span>Lorem</span> ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quibusdam deleniti voluptas eos tempore dolor nam, harum provident neque doloremque culpa nostrum earum? Ea odio unde, iure quos corporis totam.</p>
+</body>
+</html>

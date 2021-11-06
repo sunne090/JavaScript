@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj1 = {
+            one : 1,
+            nine : 5
+        };
+        let {one, five} = obj1;
+        console.log(one, five);// 1 5 //nine으로 고치면 undefined, 변수의 이름과 프로퍼티의 이름이 맞아야 한다.
+
+        let three, four;
+        ({three, four} = {three: 3, four: 4});
+        console.log(three, four);// 3 4
+
+        let a, b;
+        ({one : a, two: b } = {one : 10, two: 20});
+        console.log(a, b);//10 20
+
+        const obj2 = {nine:9, plus:{ten : 10}};
+        let {nine, plus:{ten}} = obj2;
+        console.log(nine, ten);//9 10
+
+        const options = {title : "Menu"}
+        let {width = 1, height = 2, title} = options; //default parameter 사용 가능
+        console.log(width, height, title);//1 2 Menu
+
+      
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        const tel1 = "0123456789끝";
+        const tel2 = "987654321"
+
+        const myRegExp1 = /^[0-9]+$/; // 숫자로만 이루어진 문자열 확인(0-9로 이루어진 숫자열 한번 반복한다)
+        //test: 맞으면 true, 틀리면 false 반환
+        console.log(myRegExp1.test(tel1)); //false
+        console.log(myRegExp1.test(tel2)); //true
+
+
+    </script>
+</body>
+</html>

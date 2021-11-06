@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="block"></div>
+    <script>
+        document.getElementById("block").style.width = "420px";
+        document.getElementById("block").style.height = "300px";
+        document.getElementById("block").style.backgroundColor = "blue";
+
+        //document.getElementById("block").description = "이것은 설명"; 정해놓은 키워드가 아니라서 실행되지 않는다.
+        document.getElementById("block").title = "이것은 설명";
+
+        document.getElementById("block").setAttribute("description", "이것 또한 설명"); //약속되지 않은 속성 정의 가능
+    </script>
+</body>
+</html>

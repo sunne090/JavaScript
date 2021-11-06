@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = "임꺽정";
+
+        // const Class1 = function(){
+        //     this.name = "홍길동";
+        // };
+
+        // Class1.prototype.getMethod1 = function(){
+        //     const obj = function(){
+        //         return this.name;
+        //     }
+        //     return obj; //"임꺽정"
+        // }
+
+        class Class1 {
+            name = "홍길동";
+
+            getMethod1(){
+                // const obj = function(){
+                //     return this.name;
+                // } //"에러"(클래스)
+                const obj = () => this.name; //이렇게 쓰면 에러X(생성자 함수)
+                return obj; 
+            }
+        }
+        const obj = new Class1();
+        const func = obj.getMethod1();
+        console.log(func());
+    </script>
+</body>
+</html>

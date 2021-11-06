@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {
+            display: inline;
+            list-style-type: none;
+        }
+        .input {
+            width: 200px;
+            height: 50px;
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="input">
+        <input type="text" id="input1" />	
+	    <input type="text" id="input2" />
+    </div>
+    <div class="btn">
+        <button type="button" id="sum">더하기</button>
+        <button type="button" id="sub">빼기</button>
+        <button type="button" id="multi">곱하기</button>
+        <button type="button" id="division">나누기</button>
+    </div>
+</body>
+<script>
+    document.getElementById("sum").addEventListener("click", function(){
+        let v1 = document.getElementById("input1").value;
+        let v2 = document.getElementById("input2").value;
+        v1 = Number(v1);
+        v2 = Number(v2);
+        alert(`${v1+v2}`);
+    });
+    document.getElementById("sub").addEventListener("click", function(){
+        let v1 = document.getElementById("input1").value;
+        let v2 = document.getElementById("input2").value;
+        v1 = Number(v1);
+        v2 = Number(v2);
+        alert(`${v1-v2}`);
+    }); 
+    document.getElementById("multi").addEventListener("click", function(){
+        let v1 = document.getElementById("input1").value;
+        let v2 = document.getElementById("input2").value;
+        v1 = Number(v1);
+        v2 = Number(v2);
+        alert(`${v1*v2}`);
+    });
+    document.getElementById("division").addEventListener("click", function(){
+        let v1 = document.getElementById("input1").value;
+        let v2 = document.getElementById("input2").value;
+        v1 = Number(v1);
+        v2 = Number(v2);
+        alert(`${v1/v2}`);
+    });
+</script>
+</html>

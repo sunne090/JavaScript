@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function a() {
+        //     var x = 1;
+        //     function b() {
+        //         console.log(x);
+        //     }
+        //     b();
+        // }
+        // a();
+        // console.log(x);
+
+        function a() {
+            var x = 1; //값을 조작할 수 없게 하는 것이 정보 은닉
+            return function() { 
+                console.log(x);
+            }
+        } //정보 은닉(외부에서 접근하지 못하도록 막음)
+        var c = a(); //a의 실행을 통해서 x값을 반환하면 그 값을 c가 받게 됨
+        c(); //실행 가능
+        //closure는 return이 필요(실제로 사용하고자 하는 정보를 은닉하기 위한 취지로 사용하기 때문에 정보은닉의 목적으로 return이 필요함)
+    </script>
+</body>
+</html>

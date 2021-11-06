@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(`!!true->${!!true}`);// true, 부정의 부정
+        console.log(`!!false->${!!false}`);//false, 부정의 부정
+
+        // 숫자의 boolean 조건 : 0일 경우 false, 0이 아닌 모든 수는 true
+        console.log(`!!(1) -> ${!!(1)}`);//true,
+        console.log(`!!(-1) -> ${!!(-1)}`);//true
+        console.log(`!!(0) -> ${!!(0)}`);//false
+        // 문자열의 boolean 조건 : ""/''는 false, 아니면 true
+        console.log(`!! ("안녕하세요") => ${!!("안녕하세요")}`);//true
+        console.log(`!! ("") => ${!!("")}`);//false
+        //키워드 조건: infinity 제외한 나머지 false
+        console.log(`!! (Infinity) => ${!!(Infinity)}`);//true
+        console.log(`!! (NaN) => ${!!(NaN)}`);//false
+        console.log(`!! (Null) => ${!!(null)}`);//false
+        console.log(`!! (undefined) => ${!!(undefined)}`);//false
+        //non-primitive : null이 아니면 무조건 true
+        console.log(`!![] => ${!![]}`); //true
+        console.log(`!!{} -> ${!!{}}`); //true
+    </script>
+</body>
+</html>

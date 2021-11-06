@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content {
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+            padding: 15px;
+            margin: 10px;
+            border: 10px solid black;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="myFunction()">길이측정</button>
+    <button onclick="moveScroll()">스크롤 이동</button>
+    <div id="content" onscroll="myScroll()">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, fugit omnis. Doloribus omnis quam ratione ducimus. Illum, sequi ipsa magnam nam suscipit distinctio eligendi consequatur a hic deleniti fugiat explicabo!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum deleniti ea possimus magnam quasi facilis quisquam sunt. Fugit mollitia incidunt iure. Recusandae atque voluptates delectus blanditiis repellendus harum quisquam provident.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe eligendi voluptas eum, excepturi necessitatibus aut alias velit atque, eius modi blanditiis deleniti possimus sit perferendis autem corrupti fugit, similique amet.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, error reiciendis. Eaque atque blanditiis quis cum libero, ipsam nemo culpa repudiandae facilis, aperiam soluta accusantium deleniti minima amet reprehenderit minus!label
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, eos nisi? Sint odit enim veniam sunt eveniet, illo optio ut est illum sequi voluptatum necessitatibus tempore at omnis. Iure, doloribus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione veniam, quas fuga quibusdam facere doloremque, reiciendis explicabo molestiae modi molestias, vitae nesciunt consectetur provident eveniet saepe voluptates nam et.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque consequatur soluta dolorem ducimus, vel laborum perspiciatis, possimus reiciendis ipsam, minima iure harum similique consequuntur? Sapiente illo quam numquam delectus ea.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem odio dolor quas dolorum. Dignissimos culpa unde ut praesentium laudantium, labore maiores modi consequatur sit facilis necessitatibus doloremque possimus nobis quia!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui reprehenderit quam et minima, aspernatur magnam exercitationem fuga inventore ad, quidem voluptatum pariatur numquam? Maxime facilis nisi dolore, et obcaecati ullam!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit nemo veniam ipsa ab quas expedita deserunt provident modi voluptas repellat laudantium odio facilis eaque quibusdam esse optio, recusandae ullam omnis.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet doloremque magnam tenetur vel molestias quo eum sint, illo ullam natus excepturi dolore repellendus! Maiores eos quibusdam illo optio libero architecto.
+    </div>
+    <p id="demo"></p>
+    <p id="scrolled"></p>
+    <script>
+        //padding을 포함한 컨텐츠의 전체 크기
+        function myFunction() {
+            const el = document.getElementById("content");
+            let x = el.scrollWidth; 
+            let y = el.scrollHeight;
+            document.getElementById("demo").textContent = `width: ${x}, height: ${y}`;
+        }
+        //스크롤의 위치를 알아내기(스크롤블럭 상단을 기준으로 측정함)
+        function myScroll() {
+            const el = document.getElementById("content");
+            let x = el.scrollLeft; 
+            let y = el.scrollTop;
+            document.getElementById("scrolled").textContent = `left: ${x}, top: ${y}`;
+        }
+        // 스크롤 위치 고정하기
+        function moveScroll() {
+            const el = document.getElementById("content");
+            el.scrollTop = 900;
+        }
+    </script>
+</body>
+</html>

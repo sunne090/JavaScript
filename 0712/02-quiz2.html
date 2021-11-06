@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pic {
+            width: 200px;
+            height: 200px;
+            background: url("../0709/images/pic1.jpg") center no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="pic"></div>
+    <button id="b1" onclick="changePicture('pic1')">버튼1</button>
+    <button id="b2"onclick="changePicture('pic2')">버튼2</button>
+    <button id="b3" onclick="changePicture('pic3')">버튼3</button>
+  
+    <script>
+        function changePicture(pic){
+            document.querySelector(".pic").style.backgroundImage = `url("../0709/images/${pic}.jpg")`;
+        }
+        
+    </script>
+</body>
+</html>

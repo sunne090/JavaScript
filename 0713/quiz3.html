@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li id="n1">불고기</li>
+        <li>김치</li>
+        <li>감자전</li>
+        <li>호박전</li>
+        <li>육전</li>
+        <li>파래무침</li>
+    </ul>
+    <button>오름차순정렬</button>
+    <script>
+        document.querySelector("#sort").addEventListener("click",function(){
+        const list = document.querySelectorAll("#list").children;
+            const ul = document.querySelector("#list");
+        // for (let index = 0; index < 6; index++) {
+        //     console.log(`${arr1[index]}`);
+        // }
+        Array.from(list)//리스트 기준으로 배열 사용하겠다.
+        .sort(function (a,b) {return a.localeCompare(b)})
+        .forEach(function (item){
+            ul.append(li);
+        })});
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // setTimeout(function(){
+        //     console.log("서버에서 응답을 기다려야 하는 로직");
+        // },5000);
+
+        setTimeout(function(){
+            innerFunc(globalFunction);
+        },5000);
+
+        function innerFunc(func) {
+            console.log("서버에서 응답을 기다려야 하는 로직");
+            func();    
+        }
+        function globalFunction(){
+            console.log("그냥 진행하는 로직");
+        }
+        // globalFunction();
+        //innerfunc 안에 globalFunction이 인자로 들어가게 되고 inner에 global의 제어권을 주는 것 => 콜백함수
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formId" action="https://www.naver.com" method="get">
+        ID: <input type="text" name="fname" id="myInput" pattern="[A-Za-z0-9]{6,9}" size="30" placeholder="알파벳 대소문자 및 숫자 조합">
+        <div class="warning"></div>
+        <button type="submit" id="btn">submit</button>
+    </form>
+    <script>
+        document.getElementById("btn").addEventListener("click",function(e){
+            e.preventDefault(); //클릭했을 때 이벤트 막음
+            e.stopPropagation(); //이벤트버블링(이벤트가 불필요하게 확산되는 것을 막음)
+            document.getElementById("formId").submit();
+        },false); //이벤트 캡쳐링 
+        //우선 막음처리 후 이벤트 실행될 수 있게 하는 것이 좋다.
+        // document.getElementById("formId").addEventListener("submit",function(e) {
+        //     e.preventDefault(); //action에 있는 링크로 강제 이동을 막음
+        // });
+        document.getElementById("myInput").addEventListener("invalid",function(e) {
+            document.querySelector(".warning").textContent = "반드시 알파벳 대소문자 및 숫자 조합 6~9"
+            document.querySelector(".warning").style.color = "red";
+        });
+
+    </script>
+</body>
+</html>

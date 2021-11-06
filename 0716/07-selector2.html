@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            //바로 위의 부모요소 선택 (parentEliment)
+            $(".parent").parent().css("padding","2rem");
+            //해당 요소 위의 모든 부모요소 선택
+            $(".parents").parents().css("border","1px solid blue");
+            //해당 요소의 모든 자식 요소 엘리먼트 선택(children)
+            $(".children").children().css("border", "3px dotted red");
+            //해당 요소의 이전 요소 엘리먼트 선택(previousElimentSibling)
+            $(".prev").prev().css("background-color", "yellow");
+            //해당 요소의 이전에 위치한 모든 엘리먼트 선택
+            $(".prev").prevAll().css("font-size","1.5rem");
+            //해당요소부터 지정된 위치 사이의 모든요소 선택
+            $(".prevuntil").prevUntil(".prev").css("font-style","italic");
+            //해당 요소의 이후 요소 엘리먼트 선택(nextElimentSibling)
+            $(".next").next().css("font-family","궁서");
+            //해당 요소의 이후 모든 요소 엘리먼트 선택
+            $(".next").nextAll().css("border","1px dashed green");
+            // 해당 요소부터 지정된 요소까지 위치한 모든 엘리먼트 선택
+            $(".next").nextUntil(".nextuntil").css("background-color","cyan");
+        });
+    </script>
+</head>
+<body>
+    <ul class="children">
+        <li>
+            <p class="parent">item1</p>
+        </li>
+        <li>
+            <p class="parents">item2</p>
+        </li>
+        <li class="prev">
+            <p>item3</p>
+        </li>
+        <li>
+            <p>item4</p>
+        </li>
+        <li class="prevuntil">
+            <p>item5</p>
+        </li>
+    </ul>
+    <ul>
+        <li class="next">
+            <p>item6</p>
+        </li>
+        <li>
+            <p>item7</p>
+        </li>
+        <li>
+            <p>item8</p>
+        </li>
+        <li>
+            <p>item9</p>
+        </li>
+        <li class="nextuntil">
+            <p>item10</p>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <ul id="ul1">
+        <li><label>아이템1<input type="checkbox" name="ck" id="n1"></label></li>
+        <li><label>아이템2<input type="checkbox" name="ck" id="n2"></label></li>
+        <li><label>아이템3<input type="checkbox" name="ck" id="n3"></label></li>
+        <li><label>아이템4<input type="checkbox" name="ck" id="n4"></label></li>
+        <li><label>아이템5<input type="checkbox" name="ck" id="n5"></label></li>
+    </ul>
+    <ul id="ul2">
+        <li><label>아이템6<input type="checkbox" name="ck" id="n6"></label></li>
+        <li><label>아이템7<input type="checkbox" name="ck" id="n7"></label></li>
+        <li><label>아이템8<input type="checkbox" name="ck" id="n8"></label></li>
+        <li><label>아이템9<input type="checkbox" name="ck" id="n9"></label></li>
+        <li><label>아이템10<input type="checkbox" name="ck" id="n10"></label></li>
+    </ul>
+   
+    <button id="btn1">ul위에서 ul2위로</button><br>
+    <button id="btn2">ul위에서 ul2아래로</button><br>
+    <button id="btn3">ul1아래서 ul2위로</button><br>
+    <button id="btn4">ul1아래서 ul2아래로</button><br>
+    <button id="btn5">ul2위에서 ul1위로</button><br>
+    <button id="btn6">ul2위에서 ul1아래로</button><br>
+    <button id="btn7">ul2아래서 ul1위로</button><br>
+    <button id="btn8">ul2아래서 ul1아래로</button><br>
+    <button id="delete">삭제</button><br>
+    <input type="text" name="" id="">
+    <button id="update">수정</button>
+
+    <script>
+            const a = document.getElementById("ul1");
+            const b = document.getElementById("ul2");
+        document.getElementById("btn1").addEventListener("click",function () {
+            b.firstElementChild.prepend(a.firstElementChild);});
+
+        document.getElementById("btn2").addEventListener("click",function () {
+            b.lastElementChild.append(a.firstElementChild);});
+
+        document.getElementById("btn3").addEventListener("click",function () {
+            b.firstElementChild.prepend(a.lastElementChild);});
+
+        document.getElementById("btn4").addEventListener("click",function () {
+            b.lastElementChild.append(a.lastElementChild);});
+
+        document.getElementById("btn5").addEventListener("click",function () {
+            a.firstElementChild.prepend(b.firstElementChild);});
+
+        document.getElementById("btn6").addEventListener("click",function () {
+            a.lastElementChild.append(b.firstElementChild);});
+
+        document.getElementById("btn7").addEventListener("click",function () {
+            a.firstElementChild.prepend(b.lastElementChild);});
+
+        document.getElementById("btn8").addEventListener("click",function () {
+            a.lastElementChild.append(b.lastElementChild);});
+            
+        const check = document.querySelectorAll('input[name="ck"]');
+        document.getElementById("delete").addEventListener("click",function(){
+            for (let index = 0; index < check.length; index++) {
+            if(check[index].checked == true){
+                check[index].parentElement.remove();
+            }
+        }
+        });    
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onkeyup="myFunction(event)">
+    <h2>텍스트 선택 후 shift 키를 눌러주세요</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem distinctio, facere eum numquam ad unde id
+        officiis aliquid quia eveniet inventore suscipit, error in voluptas nihil neque architecto amet libero.</p>
+    <script>
+        document.designMode = "on"
+
+        console.log("queryCommandSupported : "+document.queryCommandSupported("bold"));
+
+        function myFunction(event){
+            if(event.keyCode == 16){
+                // document.execCommand("bold");
+                // document.execCommand("selectAll");
+                if(document.queryCommandEnabled("bold")){
+                    document.execCommand("bold");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

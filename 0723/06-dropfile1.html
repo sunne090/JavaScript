@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #drop {
+            border: 1px solid black;
+            height: 250px;
+            width: 450px;
+        }
+    </style>
+</head>
+<body>
+    <p>PC의 파일을 드랍해 주세요</p>
+    <div id="drop"></div>
+    <script>
+        //드랍처리
+        const div = document.getElementById("drop");
+        //div요소에 dragenter 이벤트 리스너 지정
+        div.addEventListener("dragenter", function(e){e.preventDefault();});
+        //div 요소에 dragover 이벤트 리스저 지정
+        div.addEventListener("dragover", function(e){e.preventDefault();});
+        //div 요소에 drop 이벹ㄴ트 리스너 지정
+        div.addEventListener("drop", function(e){
+            e.preventDefault();
+            //filelist 오브젝트
+            const files = e.dataTransfer.files;
+            const file = files[0];
+            //console.log(file);
+            if(!file)return;
+            //파일의 타입 확인
+            if(!file.type.match(/^image\//))return;
+            // filereader 오브젝트 선언
+            const reader = new FileReader();
+            //Data URL 형식으로 파일 데이터 열기
+            reader.readAsDataURL(file);
+            //file이 정삭ㅇ적으로 읽혀졌을 때의 동작처리
+            reader.onload = function(){
+                const img = document.createElement("img");
+                img.src = reader.result;
+                div.append(img);
+            }
+        },false);
+    </script>
+</body>
+</html>

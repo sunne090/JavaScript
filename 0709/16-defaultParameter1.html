@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function func(a, b = 2){//뒤에 값 입력 안됐을 때 임의로 숫자를 넣음
+            return a * b;
+        }
+        console.log(func(2, 7));//14
+        //console.log(func(2));//NaN func(a,b)일떄
+        console.log(func(2));//4
+    </script>
+</body>
+</html>

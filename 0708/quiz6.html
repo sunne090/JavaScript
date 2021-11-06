@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="n1">
+    <input type="text" name="" id="n2">
+    <button id="btn">클릭</button>
+    <div id="content"></div>
+    <script>
+        document.querySelector("#btn").addEventListener("click", function(){
+            let n1 = Number(document.querySelector("#n1").value);
+            let n2 = Number(document.querySelector("#n2").value);
+
+            if(n1 % n2 == 0){
+                document.querySelector("#content").innerHTML = `<h1>${n1}는 ${n2}의 배수입니다.</h1>`
+            }
+            else{
+                document.querySelector("#content").innerHTML = `<h1>${n1}는 ${n2}의 배수가 아닙니다.</h1>`
+            }
+        })
+    </script>
+</body>
+</html>

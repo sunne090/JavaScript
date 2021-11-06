@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="rcp">
+    <button id="btn">가위바위보!</button>
+    <div id="result"></div>
+    <script>
+      document.querySelector("#btn").addEventListener("click", function(){
+        let rcp = Number(document.querySelector("#rcp").value);
+        let com = Number(Math.floor(Math.random()*(3 - 1 + 1))+1);
+
+
+        if(rcp == com){
+                result.innerHTML = `<h1>비겼습니다</h1>`;
+            } else if(rcp == (com%3+1)){
+                result.innerHTML = `<h1>이겼습니다.</h1>`
+            }else{
+                result.innerHTML = `<h1>졌습니다.</h1>`;
+            }
+        console.log(com);
+      }); 
+    </script>
+</body>
+</html>

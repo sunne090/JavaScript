@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #drop {
+            border: 1px solid black;
+            height: 100px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <p id="text">텍스트를 선택해서 아래 영역에 드롭해 주세요</p>
+    <div id="drop"></div>
+    <script>
+        //드래그 측 처리
+        const p = document.querySelector("#text");
+        p.addEventListener("dragstart", function(e){
+            const sel = window.getSelection();
+            let text = sel.toString(); //선택된 곳 가져오기
+            // 허용하는 기능
+            e.dataTransfer.effectAllowed = "copy";
+            // 전송하기 위한 데이저 지정
+            e.dataTransfer.setData("text", text);
+        }, false); //false로 지정하는 이유: event capturing 막기 위해서
+
+        const div = document.querySelector("#drop");
+        div.addEventListener("dragenter", function(e){
+            e.preventDefault();
+            e.dataTransfer.dropEffect = "copy"
+        },false);
+        div.addEventListener("dragover", function(e){
+            e.preventDefault();
+            e.dataTransfer.dropEffect = "copy"
+        },false);
+        div.addEventListener("drop", function(e){
+            e.preventDefault();
+            let text = e.dataTransfer.getData("text");
+            div.append(document.createTextNode(text));
+        },false);
+    </script>
+</body>
+</html>

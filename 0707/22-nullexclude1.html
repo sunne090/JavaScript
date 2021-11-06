@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 0;
+        let b = 3;
+
+        //let x = ( a !== null && a !== undefined) ? a: b;//a가 null이 아니고 undefined가 아니면 a출력, 아니면 b 출력
+        //let x = (a) ? a : b;
+        let x = a ?? b; //a가 null이나 undefined가 아니면 a출력
+
+        console.log(x);//3
+
+        let firstname;
+        let secondname;
+        let lastname;
+        let nickname = "홍길동";
+
+        let c = firstname ?? secondname ?? lastname ?? nickname;
+        console.log(c);
+        //넷 중에 하나라도 값 있으면 출력해라
+    </script>
+</body>
+</html>

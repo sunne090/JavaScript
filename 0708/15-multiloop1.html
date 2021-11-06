@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //중첩반복문
+        // for( let j1 = 0 ; j1 < 5 ; j1++ ){
+        //     for( let i1 = 0 ; i1 < 5 ; i1++ ){
+        //     document.write(`<p>${j1} ${i1}</p>`);
+        //     }
+        // }
+        for( let i1 = 0 ; i1 < 5 ; i1++ ){
+            let  j1 = "";
+            for( let i2 = 0 ; i2 < i1 ; i2++ ){
+            j1 += "*";
+           }
+           document.write(`<p>${j1}</p>`);
+        }
+    </script>
+</body>
+</html>

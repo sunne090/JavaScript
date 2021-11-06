@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person1 = {
+            name : 'kim'
+        }
+
+        person1.__proto__.sayHi = () => console.log(`hi ${this.name}`); //윈도우 가리킴(x)
+        //person1.sayHi(); //hi
+        person1.__proto__.sayHi = function(){
+            console.log(`hi ${this.name}`);
+        } 
+        person1.sayHi(); //hi kim 
+        //애로우 함수 사용해서 프로토타입 this 접근X
+    </script>
+</body>
+</html>

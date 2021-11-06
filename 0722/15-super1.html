@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Cat(name){
+            this.name = name;
+        }
+
+        Cat.prototype.speak = function(){
+            console.log(this.name + " make a noise");
+        }
+        
+        function Lion(name){
+            Cat.call(this, name);
+        }
+        Lion.prototype = new Cat();
+        Lion.prototype.costructor = Lion;
+        Lion.prototype.speak = function(){
+            console.log(this.name + " roar");
+        }
+        const lion = new Lion("Simba");
+        lion.speak();
+    </script>
+</body>
+</html>
